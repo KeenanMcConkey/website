@@ -1,6 +1,6 @@
 /* ═══════════════════════════════════════════════════════
    Keenan McConkey — Portfolio JS
-   Scroll reveals, cursor, nav, hero grid
+   Scroll reveals, cursor, nav
    ═══════════════════════════════════════════════════════ */
 
 (function () {
@@ -15,11 +15,9 @@
 
   /* ── Nav: scroll state ────────────────────────────────── */
   const nav = document.getElementById('nav');
-  let lastScroll = 0;
 
   window.addEventListener('scroll', () => {
     nav.classList.toggle('scrolled', window.scrollY > 30);
-    lastScroll = window.scrollY;
   }, { passive: true });
 
   /* ── Nav: mobile toggle ───────────────────────────────── */
@@ -81,27 +79,71 @@
     })();
   }
 
-  /* ── Hero Grid — generate cells with staggered animation ─ */
-  const grid = document.getElementById('heroGrid');
-  if (grid) {
-    const total = 100;               // 10 x 10
-    const fragment = document.createDocumentFragment();
+  /* ── Lightbox ─────────────────────────────────────────── */
+  const lightbox  = document.getElementById('lightbox');
+  const lbImg     = document.getElementById('lbImg');
+  const lbCaption = document.getElementById('lbCaption');
+  const lbClose   = lightbox.querySelector('.lb-close');
+  const lbPrev    = lightbox.querySelector('.lb-prev');
+  const lbNext    = lightbox.querySelector('.lb-next');
 
-    for (let i = 0; i < total; i++) {
-      const span = document.createElement('span');
-      // Stagger each cell with a unique animation
-      const delay = (Math.random() * 4).toFixed(2);
-      const dur   = (3 + Math.random() * 4).toFixed(2);
-      span.style.animation = 'gridPulse ' + dur + 's ease-in-out ' + delay + 's infinite';
-      fragment.appendChild(span);
-    }
+  const photos = Array.from(document.querySelectorAll('.photo-item img'));
+  let currentIdx = 0;
 
-    grid.appendChild(fragment);
+  function openLightbox(idx) {
+    currentIdx = idx;
+    updateLightbox();
+    lightbox.classList.add('active');
+    document.body.style.overflow = 'hidden';
   }
 
-  /* ── Inject grid pulse keyframes ──────────────────────── */
-  const style = document.createElement('style');
-  style.textContent = '@keyframes gridPulse { 0%, 100% { opacity: 0.15; } 50% { opacity: 1; } }';
-  document.head.appendChild(style);
+  function closeLightbox() {
+    lightbox.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+
+  function updateLightbox() {
+    const img = photos[currentIdx];
+    lbImg.src = img.src;
+    lbImg.alt = img.alt;
+    lbCaption.textContent = img.alt;
+  }
+
+  function showPrev() {
+    currentIdx = (currentIdx - 1 + photos.length) % photos.length;
+    updateLightbox();
+  }
+
+  function showNext() {
+    currentIdx = (currentIdx + 1) % photos.length;
+    updateLightbox();
+  }
+
+  // Open on photo click
+  photos.forEach(function (img, i) {
+    img.closest('.photo-item').addEventListener('click', function () {
+      openLightbox(i);
+    });
+  });
+
+  // Close / nav
+  lbClose.addEventListener('click', closeLightbox);
+  lbPrev.addEventListener('click', showPrev);
+  lbNext.addEventListener('click', showNext);
+
+  // Click backdrop to close
+  lightbox.addEventListener('click', function (e) {
+    if (e.target === lightbox || e.target.classList.contains('lb-content')) {
+      closeLightbox();
+    }
+  });
+
+  // Keyboard navigation
+  document.addEventListener('keydown', function (e) {
+    if (!lightbox.classList.contains('active')) return;
+    if (e.key === 'Escape') closeLightbox();
+    if (e.key === 'ArrowLeft') showPrev();
+    if (e.key === 'ArrowRight') showNext();
+  });
 
 })();
