@@ -562,6 +562,17 @@ section { padding: 140px 0; }
   color: var(--mid); line-height: 1.6;
 }
 
+.music-link {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: 0.78rem; font-weight: 500;
+  letter-spacing: 0.06em; text-transform: uppercase;
+  margin-top: 16px;
+  transition: gap 0.4s var(--ease);
+}
+.music-link:hover { gap: 16px; }
+.music-link svg { transition: transform 0.4s var(--ease); }
+.music-link:hover svg { transform: translateX(4px); }
+
 /* Equalizer bars */
 .eq-bars {
   display: flex; align-items: flex-end;
