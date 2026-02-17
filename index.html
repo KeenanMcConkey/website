@@ -37,14 +37,13 @@
 <section class="hero" id="home">
   <div class="container hero-layout">
     <div class="hero-text">
-      <div class="hero-eyebrow reveal">Machine Learning &middot; Robotics &middot; Computer Vision</div>
+      <div class="hero-eyebrow reveal">Machine Learning &middot; Robotics &middot; Physics Simulation; &middot; Audio Synthesis</div>
       <h1 class="reveal reveal-delay-1">Keenan McConkey</h1>
       <p class="hero-bio reveal reveal-delay-2">
         I'm an engineer with a strong math and physics background, focused on applying
-        computation to the problems that matter most. I learn fast, enjoy tough
+        computation to the problems that matter to me. I learn fast, enjoy tough
         projects, and do my best work at the intersection of software and the
-        physical world — from machine learning and computer vision to robotics
-        and embedded systems.
+        physical world.
       </p>
       <div class="hero-actions reveal reveal-delay-3">
         <a href="#projects" class="hero-btn">View my work</a>
@@ -66,7 +65,7 @@
   <div class="container">
     <div class="section-label reveal"><span>Selected Work</span></div>
     <p class="section-intro reveal">
-      A few projects I've built across machine learning, robotics, and physics simulation.
+      A few projects I've built across machine learning, robotics, physics simulation, and audio synthesis.
     </p>
 
     <!-- 01 — BarPath Model -->
@@ -99,6 +98,34 @@
       </div>
       <div class="project-visual reveal reveal-delay-1">
         <img src="photos/project-barpath.jpg" alt="BarPath Model preview" loading="lazy">
+      </div>
+    </article>
+
+    <!-- 05 — CLIDAW -->
+    <article class="project-card">
+      <div class="project-info reveal">
+        <div class="project-number">05</div>
+        <h2>CLIDAW</h2>
+        <p class="project-desc">
+          A command-line digital audio workstation that embraces the Unix philosophy. Write music as plain text,
+          version-control compositions with git, and pipe outputs between tools. Features text-based note notation,
+          multi-track playback, live keyboard mode, ADSR envelopes, and chord support — all from the terminal.
+        </p>
+        <div class="project-tags">
+          <span>Rust</span>
+          <span>Audio Synthesis</span>
+          <span>DSP</span>
+          <span>CLI</span>
+        </div>
+        <div class="project-links-row">
+          <a href="https://github.com/KeenanMcConkey/clidaw" target="_blank" rel="noopener" class="project-link">
+            View on GitHub
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="project-visual reveal reveal-delay-1">
+        <img src="photos/project-clidaw.JPG" alt="CLIDAW command-line DAW preview" loading="lazy">
       </div>
     </article>
 
@@ -169,7 +196,41 @@
       </div>
     </article>
 
-    <!-- 04 — Explosion Sim -->
+
+
+    <!-- 06 — CALVIN -->
+    <article class="project-card project-card--flip">
+      <div class="project-visual reveal">
+        <img src="photos/project-calvin.jpg" alt="CALVIN robot preview" loading="lazy">
+      </div>
+      <div class="project-info reveal reveal-delay-1">
+        <div class="project-number">06</div>
+        <h2>CALVIN Robot</h2>
+        <p class="project-desc">
+          An Engineering Physics robot built for autonomous competition, featuring custom electrical, mechanical, 
+          and software systems. The full C++ codebase handles sensor integration, motor control, and real-time decision making
+          on embedded hardware.
+        </p>
+        <div class="project-tags">
+          <span>C++</span>
+          <span>Embedded Systems</span>
+          <span>Robotics</span>
+          <span>Sensor Fusion</span>
+        </div>
+        <div class="project-links-row">
+          <a href="https://keenanmcconkey.github.io/CALVIN/" target="_blank" rel="noopener" class="project-link">
+            Go to Website
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a href="https://github.com/KeenanMcConkey/CALVIN" target="_blank" rel="noopener" class="project-link">
+            View on GitHub
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+    </article>
+
+        <!-- 04 — Explosion Sim -->
     <article class="project-card project-card--flip">
       <div class="project-visual reveal">
         <img src="photos/project-explosion.jpg" alt="Explosion Simulator preview" loading="lazy">
@@ -203,38 +264,6 @@
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </a>
         </div>
-      </div>
-    </article>
-
-    <!-- 05 — CALVIN -->
-    <article class="project-card">
-      <div class="project-info reveal">
-        <div class="project-number">05</div>
-        <h2>CALVIN Robot</h2>
-        <p class="project-desc">
-          An Engineering Physics robot built for autonomous competition, featuring custom electrical, mechanical, 
-          and software systems. The full C++ codebase handles sensor integration, motor control, and real-time decision making
-          on embedded hardware.
-        </p>
-        <div class="project-tags">
-          <span>C++</span>
-          <span>Embedded Systems</span>
-          <span>Robotics</span>
-          <span>Sensor Fusion</span>
-        </div>
-        <div class="project-links-row">
-          <a href="https://keenanmcconkey.github.io/CALVIN/" target="_blank" rel="noopener" class="project-link">
-            Go to Website
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          </a>
-          <a href="https://github.com/KeenanMcConkey/CALVIN" target="_blank" rel="noopener" class="project-link">
-            View on GitHub
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          </a>
-        </div>
-      </div>
-      <div class="project-visual reveal reveal-delay-1">
-        <img src="photos/project-calvin.jpg" alt="CALVIN robot preview" loading="lazy">
       </div>
     </article>
 
