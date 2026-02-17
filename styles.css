@@ -234,6 +234,28 @@ nav .container {
   color: var(--white);
 }
 
+/* Social links */
+.social-links {
+  display: flex; gap: 20px; margin-top: 28px;
+}
+.social-links a {
+  display: flex; align-items: center; justify-content: center;
+  width: 40px; height: 40px;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  color: var(--mid);
+  transition: all 0.35s var(--ease);
+}
+.social-links a:hover {
+  background: var(--black);
+  border-color: var(--black);
+  color: var(--white);
+  transform: translateY(-2px);
+}
+.social-links svg {
+  width: 18px; height: 18px;
+}
+
 /* Headshot photo */
 .hero-photo {
   width: 320px; height: 320px;
@@ -259,6 +281,7 @@ nav .container {
     order: -1;
   }
   .hero-actions { justify-content: center; }
+  .social-links { justify-content: center; }
 }
 
 /* Scroll cue */
